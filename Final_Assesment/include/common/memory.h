@@ -90,4 +90,100 @@ void set_all(char * ptr, char value, unsigned int size);
  */
 void clear_all(char * ptr, unsigned int size);
 
+/**
+ * @breif Move data from one memory location to another.
+ *
+ * This function takes two byte pointers (one source and one destination) and 
+ * a length of bytes to move from the source location to the destination. All
+ * opertions should be performed using pointer arthematics. 
+ *
+ * @param src Pointer to source memory location
+ * @param dst Pointer to distination memory location
+ * @param length number of bytes to copy
+ *
+ * @return a pointer to distination(dst)
+**/
+uint8_t * my_memmove(uint8_t *src, uint8_t *dst, uint8_t length);
+
+/**
+ * @breif Copy data from one memory location to another.
+ *
+ * This function takes two byte pointers (one source and one destination) and 
+ * a length of bytes to copy from the source location to the destination. All
+ * opertions should be performed using pointer arthematics. 
+ *
+ * @param src Pointer to source memory location
+ * @param dst Pointer to distination memory location
+ * @param length number of bytes to copy
+ *
+ * @return a pointer to distination(dst)
+**/
+uint8_t * my_memcopy(uint8_t *src, uint8_t *dst, uint8_t length);
+
+/**
+ * @breif Set location of memory to a given value.
+ *
+ * This should take a pointer to a memory location, a length in bytes 
+ * and set all locations of that memory to a given value. All operations 
+ * should be performed using pointer arthematics. You should NOT use set_all() function.
+ *
+ * @param src Pointer to memory location
+ * @param length numberof bytes 
+ * @param value value to set memory
+ *
+ * @return a pointer to source(src)
+**/
+uint8_t * my_memset(uint8_t *src, uint8_t length, uint8_t value);
+
+/**
+ * @breif Zero out memory.
+ *
+ * This should take a pointer to a memory location, a length in bytes 
+ * and zero out all of the memory. All operations should be performed using
+ * pointer arthematics. You should not use clear_all() function.
+ *
+ * @param src Pointer to memory location
+ * @param length numberof bytes 
+ *
+ * @return a pointer to source(src)
+**/
+uint8_t * my_memzero(uint8_t *src, size_t length);
+
+/**
+ * @breif Reserve a number of bytes in memory.
+ *
+ * This should take a pointer to a memory location, a length in bytes 
+ * and reserve all of the bytes. All operations should be performed using
+ * pointer arthematics
+ *
+ * @param src Pointer to memory location
+ * @param length numberof bytes 
+ *
+ * @return a pointer to src
+**/
+uint8_t * my_reverse(uit8_t *src, size_t length);
+
+/**
+ * @brief Alocate dynamic memory.
+ *
+ * This function takes number of words to allocate in dynamic memory.
+ *
+ * @param length number of words
+ *
+ * @return Should return a pointer to memory if successful, or a Null Pointer if not successful
+**/
+uint32_t * reserve_words(size_t length);
+
+/**
+ * @brie Free a dynamic memory allocation.
+ *
+ * This function takes a pointer src and free the dynamic memory allocation.
+ * All operations should be performed using pointer arthimatic.
+ *
+ * @param src Pointer to the memory that should be free
+ *
+ * @return void
+**/
+void free_words(uint32_t *src);
 #endif /* __MEMORY_H__ */
+
