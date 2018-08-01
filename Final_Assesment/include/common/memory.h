@@ -15,12 +15,15 @@
  * This header file provides an abstraction of reading and
  * writing to memory via function calls. 
  *
- * @author Alex Fosdick
- * @date April 1 2017
+ * @author Azam
+ * @date 20 Jul, 2018
  *
  */
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
+
+#include <stdlib.h>
+#include <stdint.h>
 
 /**
  * @brief Sets a value of a data array 

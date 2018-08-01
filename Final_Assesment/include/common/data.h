@@ -12,6 +12,11 @@
 
  #ifndef __DATA_H__
  #define __DATA_H__
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include "memory.h"
 /********************************* my_itoa() *****************************/
 /**
 * @brief Convert integer-to-ASCII

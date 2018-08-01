@@ -21,7 +21,7 @@
  *
  */
 #include <memory.h>
-#include <stdint.h>
+
 /***********************************************************
                 Function Definitions
 ***********************************************************/
@@ -56,8 +56,18 @@ void clear_all(char * ptr, unsigned int size){
 
 /*****************my_memmove()***********************/
 uint8_t * my_memmove(uint8_t *src, uint8_t *dst, uint8_t length){
+  int i ;
+  uint8_t *temp_ptr;
+  for( i = 0; i < length; i++)
+  {
+    temp_ptr[i] = src[i];
+  }
+  for( i = 0; i < length; i++)
+  {
+    dst[i] = temp_ptr[i];
+  }
 
-
+  return dst;
 }
 
 /*****************my_memcopy()***********************/
@@ -106,9 +116,9 @@ uint8_t * my_reverse(uit8_t *src, size_t length){
   for( lo = 0, hi = length - 1; hi > lo; lo++, hi--)
     {
         
-      uint8_t *tmp = src[lo];
+      uint8_t *tmp = ( long int ) src[lo];
       src[lo] = src[hi];
-      src[hi] = tmp;
+      src[hi] = ( intptr_t ) tmp;
 
     }
 

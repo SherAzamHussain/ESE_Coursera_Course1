@@ -57,17 +57,16 @@ int main(int argc, char *argv[]) {
   sorted_array = sort_array(test, SIZE);
   
   print_array(test, SIZE);
-  printf("\nsorted array is:\n");
+  PRINTF("\nsorted array is:\n");
   int i;
   for(i = 0; i < SIZE; i++){
     
-    printf("%d\t", sorted_array[i]);
+    PRINTF("%d\t", sorted_array[i]);
   
   }
-  printf("\nmean of array is: %.2f \n\n", mean);
-  printf("median of array is: %.2f \n\n", median);
-  printf("maximum element of array is: %d \n\n", max_element);
-  printf("minimum element of array is: %d \n\n", min_element);
+  PRINTF("median of array is: %.2f \n\n", median);
+  PRINTF("maximum element of array is: %d \n\n", max_element);
+  PRINTF("minimum element of array is: %d \n\n", min_element);
   print_statistics(test, SIZE);
  
 
@@ -93,8 +92,8 @@ void print_statistics(unsigned char myArray[], int length){
      min_element = sorted_array[length - 1];
      
      
-     printf("statistics of array are:\n");
-     printf("mean: %.2f  median: %.2f  maximum: %d  minimum: %d \n", mean, median, max_element, min_element);
+     PRINTF("statistics of array are:\n");
+     PRINTF("mean: %.2f  median: %.2f  maximum: %d  minimum: %d \n", mean, median, max_element, min_element);
 
 
 }
@@ -188,13 +187,19 @@ unsigned char *sort_array(unsigned char myArray[], int length){
 
 /* definition of print_array() function*/
 
-void print_array(unsigned char myArray[], int length){
+void print_array(unsigned char myArray[], int length)
+{
+    #ifdef VERBOSE
+
     int i;
-    printf("The contents of array are:\n");
-    for(i = 0; i < SIZE; i++){
-    printf("%d\t", myArray[i]);
+    PRINTF("The contents of array are:\n");
+    for(i = 0; i < SIZE; i++)
+    {
+      PRINTF("%d\t", myArray[i]);
       
     }
+
+    #endif
 
 }
 
